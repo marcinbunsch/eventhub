@@ -4,7 +4,9 @@ Gemfile.lock
 pkg/*
 bin/autospec
 bin/htmldiff
-bin/ldiff 
+bin/ldiff
 bin/nokogiri
 bin/rspec
 test.rb
+spec/connection.yml
+spec/fixtures/*.yml

@@ -1,5 +1,6 @@
 require 'digest/sha1'
-class Event
+
+class EventHub::Event
   
   attr_accessor :uuid, :kind, :user, :repo, :time, :gravatar, :message
   def initialize(attributes = {})
