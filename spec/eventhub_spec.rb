@@ -24,6 +24,7 @@ describe EventHub do
       events = @hub.events
     end
     @hub.authenticated?.should be_true
+    events.first.time.zone.should == 'UTC'
     events.size.should_not == 0
     events.first.class.should == EventHub::Event
   end
@@ -34,6 +35,7 @@ describe EventHub do
       events = @hub.events(:page => 2)
     end
     @hub.authenticated?.should be_true
+    events.first.time.zone.should == 'UTC'
     events.size.should_not == 0
     events.first.class.should == EventHub::Event
   end
