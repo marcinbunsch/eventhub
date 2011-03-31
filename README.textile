@@ -2,7 +2,7 @@
 
 h2. Installation
 
-The gem is not hosted on Gemcutter. To install it, clone the gem from github and run rake install:
+The gem is not hosted on Rubygems. To install it, clone the gem from github and run rake install:
 
 bc. git clone http://github.com/marcinbunsch/eventhub
 cd eventhub
