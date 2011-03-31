@@ -1,0 +1,49 @@
+*eventhub* is a ruby client for an unexisting GitHub Event API. It fetches the events from your GitHub timeline by logging in to your account and parsing the html on the dashboard.
+
+h2. Installation
+
+The gem is not hosted on Gemcutter. To install it, clone the gem from github and run rake install:
+
+bc. git clone http://github.com/marcinbunsch/eventhub
+cd eventhub
+rake install
+
+h2. Usage
+
+Before using this gem you must require it by calling:
+
+bc. require 'eventhub'
+
+From then you can use the EventHub class to fetch events from your GitHub timeline.
+
+bc. github = EventHub.new('your_username', 'your_password')
+github.events
+
+This will return an array of EventHub::Event objects.
+
+Each EventHub::Event has the following properties:
+
+* uuid - A SHA1 hash created from user name, repo name, time and kind of event
+* kind - Type of event
+* user - Name of user who triggered the event
+* repo - Name of repo which is the subject of the event
+* time - Time of event (in UTC)
+* gravatar - Link to gravatar image of the user
+* message - Description of the event
+
+h2. Contribution
+
+You're more than welcome to fork and improve this gem. Usual rules:
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with Rakefile, version, or history.
+  (if you want to have your own version, that is fine but
+  bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request.
+
+h2. Copyright
+
+Copyright (c) 2011 Marcin Bunsch. See LICENSE for details.
