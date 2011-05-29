@@ -36,7 +36,7 @@ class EventHub
     parsed.search('div.alert').collect do |object|
       repo    = object.at('.body .title a:nth-child(4)')
       repo    = object.at('.body .title a:nth-child(3)') if !repo
-      message = object.at('.commits') || object.at('.message'
+      message = object.at('.commits') || object.at('.message')
       Event.new(
         :kind     => (object.attributes['class'].split(' ') - ['alert']).first,
         :user     => object.at('.body .title a:nth-child(1)').html,
