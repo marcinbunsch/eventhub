@@ -41,7 +41,7 @@ class EventHub
         :kind     => (object.attributes['class'].split(' ') - ['alert']).first,
         :user     => object.at('.body .title a:nth-child(1)').html,
         :repo     => repo.html,
-        :time     => Time.parse(object.at('.body .title abbr').html).utc,
+        :time     => Time.parse(object.at('time .js-relative-date').attributes['datetime']).utc,
         :gravatar => object.at("//div[@class='gravatar']/img").attributes['src'],
         :message  => message ? message.html.strip : ''
       )
